@@ -2,8 +2,10 @@
 ## 需求：
 - 指定git仓库下载代码
 - 自动初始化环境（Python，依赖可通过PIP安装）
-## base image
-需要python3的环境，因此从官网https://hub.docker.com/_/python找了tag为：3.7-buster的版本，不同镜像版本区别参考：https://blog.csdn.net/dcr782195101/article/details/122330234
+## Base Image
+需要python3的环境，因此从官网 https://hub.docker.com/_/python 选择tag为：3.7-buster的版本.
+
+不同镜像版本区别参考：https://blog.csdn.net/dcr782195101/article/details/122330234
 
 docker hub官网下载太慢，已经将base image 推送到aliyun，下载方式为：
 docker pull registry.cn-hangzhou.aliyuncs.com/dzf/python:3.7-buster

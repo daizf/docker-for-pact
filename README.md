@@ -33,3 +33,10 @@ docker run -e BRANCH=main -e REPO=git@github.com:xiyejin/pact-demo.git -p9090:80
 ```
 docker run -e BRANCH=main -e REPO=user:password@https://github.com/daizf/docker-for-pact.git -p9090:8089 -d python:3.7-buster-git
 ```
+
+## troubleshoot
+对于容器启动失败，比如缺少依赖库等原因，可以采用如下方法进入容器：启动的时候强制改写entrypoint指令
+```
+docker run --rm -it -e BRANCH=main -e REPO=git@github.com:xiyejin/pact-demo.git --entrypoint bash python:3.7-buster-git
+```
+进入容器内部后可以手动执行/修改 `docker-entrypoint.sh`

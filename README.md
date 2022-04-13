@@ -1,7 +1,8 @@
 # docker-for-pact
 ## 需求：
 - 指定git仓库下载代码
-- 自动初始化环境（Python，依赖可通过PIP安装）
+- 自动初始化环境（Python3，项目依赖库可通过PIP安装）
+- 可以调试排查问题
 ## Base Image
 需要python3的环境，因此从官网 https://hub.docker.com/_/python 选择tag为：3.7-buster的版本.
 
@@ -17,7 +18,7 @@ ssh-keygen -t rsa -C "zhfai@163.com"
 ```
 1. 需要将证书打包在docker image中
 2. 需要将public key注册在github中：https://github.com/settings/keys
-3. known_hosts 记录github.com的公钥，这样建立连接时候就不需要再进行确认
+3. known_hosts 记录github.com的公钥，这样`git clone`时候就不需要再进行交互确认
 
 ## 镜像构建
 启动命令在：docker-entrypoint.sh，可以根据需要修改。
